@@ -7,3 +7,43 @@
 ###
 POST {{host}}/users HTTP/1.1
 content-type: {{contentType}}
+
+{
+  "name": "Bruno Sampaio",
+  "email": "brunojsampaio@gmail.com",
+  "password": "123456",
+  "confirmPassword": "123456",
+  "admin": true
+}
+
+###
+POST {{host}}/users HTTP/1.1
+content-type: {{contentType}}
+
+{
+  "name": "Rakely Sampaio",
+  "email": "rakelyribeiro@gmail.com",
+  "password": "123456",
+  "confirmPassword": "123456",
+  "admin": false
+}
+
+###
+GET {{host}}/users HTTP/1.1
+content-type: {{contentType}}
+
+###
+GET {{host}}/users/1 HTTP/1.1
+content-type: {{contentType}}
+
+###
+PUT {{host}}/users/1 HTTP/1.1
+content-type: {{contentType}}
+
+{
+  "name": "Bruno Sampaio",
+  "email": "brunojsampaio@gmail.com",
+  "password": "123456",
+  "confirmPassword": "123456",
+  "admin": true
+}
