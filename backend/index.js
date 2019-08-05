@@ -1,4 +1,5 @@
 const app = require("express")();
+const port = 3000;
 const consign = require("consign");
 const db = require("./config/db");
 
@@ -11,6 +12,6 @@ consign()
   .then("./config/routes.js")
   .into(app);
 
-app.listen(3000, () => {
-  console.log("Backend executando...");
+app.listen(port, () => {
+  console.log(`Backend executando na porta ${port}...`);
 });
