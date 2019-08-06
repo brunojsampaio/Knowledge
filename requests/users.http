@@ -3,9 +3,10 @@
 @port = 3000
 @host = {{http}}{{hostname}}:{{port}}
 @contentType = application/json
+@endPoint = users
 
 ###
-POST {{host}}/users HTTP/1.1
+POST {{host}}/{{endPoint}} HTTP/1.1
 content-type: {{contentType}}
 
 {
@@ -17,7 +18,7 @@ content-type: {{contentType}}
 }
 
 ###
-POST {{host}}/users HTTP/1.1
+POST {{host}}/{{endPoint}} HTTP/1.1
 content-type: {{contentType}}
 
 {
@@ -29,15 +30,15 @@ content-type: {{contentType}}
 }
 
 ###
-GET {{host}}/users HTTP/1.1
+GET {{host}}/{{endPoint}} HTTP/1.1
 content-type: {{contentType}}
 
 ###
-GET {{host}}/users/1 HTTP/1.1
+GET {{host}}/{{endPoint}}/1 HTTP/1.1
 content-type: {{contentType}}
 
 ###
-PUT {{host}}/users/1 HTTP/1.1
+PUT {{host}}/{{endPoint}}/1 HTTP/1.1
 content-type: {{contentType}}
 
 {

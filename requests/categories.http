@@ -1,0 +1,70 @@
+@http = http://
+@hostname = localhost
+@port = 3000
+@host = {{http}}{{hostname}}:{{port}}
+@contentType = application/json
+@endPoint = categories
+
+###
+POST {{host}}/{{endPoint}} HTTP/1.1
+content-type: {{contentType}}
+
+{
+  "name": "Web Moderno"
+}
+
+###
+POST {{host}}/{{endPoint}} HTTP/1.1
+content-type: {{contentType}}
+
+{
+  "name": "CSS",
+  "parentId": 1
+}
+
+###
+POST {{host}}/{{endPoint}} HTTP/1.1
+content-type: {{contentType}}
+
+{
+  "name": "JS",
+  "parentId": 1
+}
+
+###
+POST {{host}}/{{endPoint}} HTTP/1.1
+content-type: {{contentType}}
+
+{
+  "name": "VueJS",
+  "parentId": 3
+}
+
+###
+POST {{host}}/{{endPoint}} HTTP/1.1
+content-type: {{contentType}}
+
+{
+  "name": "Para alterar"
+}
+
+###
+PUT {{host}}/{{endPoint}}/5 HTTP/1.1
+content-type: {{contentType}}
+
+{
+  "name": "Para excluir"
+}
+
+###
+DELETE {{host}}/{{endPoint}}/5 HTTP/1.1
+content-type: {{contentType}}
+
+###
+GET {{host}}/{{endPoint}} HTTP/1.1
+content-type: {{contentType}}
+
+###
+GET {{host}}/{{endPoint}}/1 HTTP/1.1
+content-type: {{contentType}}
+
