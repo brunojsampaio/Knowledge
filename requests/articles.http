@@ -1,0 +1,54 @@
+@http = http://
+@hostname = localhost
+@port = 3000
+@host = {{http}}{{hostname}}:{{port}}
+@contentType = application/json
+@endPoint = articles
+
+###
+POST {{host}}/{{endPoint}} HTTP/1.1
+content-type: {{contentType}}
+
+{
+  "name": "10 motivos para usar VueJS",
+  "description": "O artigo aborda os aspctos...",
+  "userId": 1,
+  "categoryId": 4,
+  "content": "Conteúdo do artigo..."
+}
+
+###
+GET {{host}}/{{endPoint}} HTTP/1.1
+content-type: {{contentType}}
+
+###
+GET {{host}}/{{endPoint}}/1 HTTP/1.1
+content-type: {{contentType}}
+
+###
+PUT {{host}}/{{endPoint}}/1 HTTP/1.1
+content-type: {{contentType}}
+
+{
+  "name": "10 motivos para usar VueJS",
+  "description": "O artigo aborda os aspctos...",
+  "userId": 1,
+  "categoryId": 4,
+  "content": "Conteúdo do artigo. alterado.."
+}
+
+###
+POST {{host}}/{{endPoint}} HTTP/1.1
+content-type: {{contentType}}
+
+{
+  "name": "Artigo para excluir",
+  "description": "O artigo aborda os aspctos...",
+  "userId": 1,
+  "categoryId": 4,
+  "content": "Conteúdo do artigo..."
+}
+
+###
+DELETE {{host}}/{{endPoint}}/2 HTTP/1.1
+content-type: {{contentType}}
