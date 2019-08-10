@@ -30,13 +30,10 @@ services:
     container_name: "knowledge-mongo"
     image: mongo:4
     restart: always
-    # ports:
-    #   - "27017:27017"
+    ports:
+      - "27017:27017"
     volumes:
       - dados-nosql:/data/db
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
-      MONGO_INITDB_ROOT_PASSWORD: ${DB_PASSWORD}
     networks:
       - banco
   

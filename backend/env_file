@@ -6,5 +6,10 @@ module.exports = {
       database: "knowledge",
       user: "postgres",
       password: ""
+    },
+    mongo: {
+      port: 27017,
+      host: "mongo",
+      database: "knowledge_stats"
     }
 }

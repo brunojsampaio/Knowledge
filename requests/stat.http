@@ -1,0 +1,25 @@
+@http = http://
+@hostname = localhost
+@port = 3000
+@host = {{http}}{{hostname}}:{{port}}
+@contentType = application/json
+@endPoint = stats
+@endPointLogin = signin
+
+###
+# @name login
+POST {{host}}/{{endPointLogin}} HTTP/1.1
+content-type: {{contentType}}
+
+{
+  "email": "brunojsampaio@gmail.com",
+  "password": "123456"
+}
+
+###
+@authToken = Bearer {{login.response.body.$.token}}
+
+###
+GET {{host}}/{{endPoint}} HTTP/1.1
+content-type: {{contentType}}
+Authorization: {{authToken}}
