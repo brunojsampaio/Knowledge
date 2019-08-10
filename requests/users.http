@@ -70,6 +70,19 @@ Authorization: {{authToken}}
 }
 
 ###
+PUT {{host}}/{{endPoint}}/4 HTTP/1.1
+content-type: {{contentType}}
+Authorization: {{authToken}}
+
+{
+  "name": "Teste de cadastro",
+  "email": "testedecadastro@gmail.com",
+  "password": "123456",
+  "confirmPassword": "123456",
+  "admin": true
+}
+
+###
 DELETE {{host}}/{{endPoint}}/2 HTTP/1.1
 content-type: {{contentType}}
 Authorization: {{authToken}}

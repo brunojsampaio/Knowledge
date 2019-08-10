@@ -1,0 +1,17 @@
+@http = http://
+@hostname = localhost
+@port = 3000
+@host = {{http}}{{hostname}}:{{port}}
+@contentType = application/json
+@endPoint = signup
+
+###
+POST {{host}}/{{endPoint}} HTTP/1.1
+content-type: {{contentType}}
+
+{
+  "name": "Teste de cadastro",
+  "email": "testedecadastro@gmail.com",
+  "password": "123456",
+  "confirmPassword": "123456"
+}
