@@ -5,6 +5,7 @@ module.exports = app => {
     const usersCount = await app
       .db("users")
       .count("id")
+      .whereNull('deletedAt')
       .first();
     const categoriesCount = await app
       .db("categories")

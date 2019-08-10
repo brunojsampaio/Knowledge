@@ -52,7 +52,7 @@ content-type: {{contentType}}
 Authorization: {{authToken}}
 
 ###
-GET {{host}}/{{endPoint}}/1 HTTP/1.1
+GET {{host}}/{{endPoint}}/2 HTTP/1.1
 content-type: {{contentType}}
 Authorization: {{authToken}}
 
@@ -68,3 +68,8 @@ Authorization: {{authToken}}
   "confirmPassword": "123456",
   "admin": true
 }
+
+###
+DELETE {{host}}/{{endPoint}}/2 HTTP/1.1
+content-type: {{contentType}}
+Authorization: {{authToken}}
