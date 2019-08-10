@@ -1,0 +1,16 @@
+@http = http://
+@hostname = localhost
+@port = 3000
+@host = {{http}}{{hostname}}:{{port}}
+@contentType = application/json
+@endPoint = signin
+
+###
+# @name login
+POST {{host}}/{{endPoint}} HTTP/1.1
+content-type: {{contentType}}
+
+{
+  "email": "brunojsampaio@gmail.com",
+  "password": "123456"
+}

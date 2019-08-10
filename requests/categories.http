@@ -4,10 +4,25 @@
 @host = {{http}}{{hostname}}:{{port}}
 @contentType = application/json
 @endPoint = categories
+@endPointLogin = signin
+
+###
+# @name login
+POST {{host}}/{{endPointLogin}} HTTP/1.1
+content-type: {{contentType}}
+
+{
+  "email": "brunojsampaio@gmail.com",
+  "password": "123456"
+}
+
+###
+@authToken = Bearer {{login.response.body.$.token}}
 
 ###
 POST {{host}}/{{endPoint}} HTTP/1.1
 content-type: {{contentType}}
+Authorization: {{authToken}}
 
 {
   "name": "Web Moderno"
@@ -16,6 +31,7 @@ content-type: {{contentType}}
 ###
 POST {{host}}/{{endPoint}} HTTP/1.1
 content-type: {{contentType}}
+Authorization: {{authToken}}
 
 {
   "name": "CSS",
@@ -25,6 +41,7 @@ content-type: {{contentType}}
 ###
 POST {{host}}/{{endPoint}} HTTP/1.1
 content-type: {{contentType}}
+Authorization: {{authToken}}
 
 {
   "name": "JS",
@@ -34,6 +51,7 @@ content-type: {{contentType}}
 ###
 POST {{host}}/{{endPoint}} HTTP/1.1
 content-type: {{contentType}}
+Authorization: {{authToken}}
 
 {
   "name": "VueJS",
@@ -43,6 +61,7 @@ content-type: {{contentType}}
 ###
 POST {{host}}/{{endPoint}} HTTP/1.1
 content-type: {{contentType}}
+Authorization: {{authToken}}
 
 {
   "name": "Para alterar"
@@ -51,6 +70,7 @@ content-type: {{contentType}}
 ###
 PUT {{host}}/{{endPoint}}/5 HTTP/1.1
 content-type: {{contentType}}
+Authorization: {{authToken}}
 
 {
   "name": "Para excluir"
@@ -59,19 +79,24 @@ content-type: {{contentType}}
 ###
 DELETE {{host}}/{{endPoint}}/5 HTTP/1.1
 content-type: {{contentType}}
+Authorization: {{authToken}}
 
 ###
 GET {{host}}/{{endPoint}} HTTP/1.1
 content-type: {{contentType}}
+Authorization: {{authToken}}
 
 ###
 GET {{host}}/{{endPoint}}/1 HTTP/1.1
 content-type: {{contentType}}
+Authorization: {{authToken}}
 
 ###
 GET {{host}}/{{endPoint}}/tree HTTP/1.1
 content-type: {{contentType}}
+Authorization: {{authToken}}
 
 ###
 GET {{host}}/{{endPoint}}/4/articles HTTP/1.1
 content-type: {{contentType}}
+Authorization: {{authToken}}

@@ -4,10 +4,25 @@
 @host = {{http}}{{hostname}}:{{port}}
 @contentType = application/json
 @endPoint = users
+@endPointLogin = signin
+
+###
+# @name login
+POST {{host}}/{{endPointLogin}} HTTP/1.1
+content-type: {{contentType}}
+
+{
+  "email": "brunojsampaio@gmail.com",
+  "password": "123456"
+}
+
+###
+@authToken = Bearer {{login.response.body.$.token}}
 
 ###
 POST {{host}}/{{endPoint}} HTTP/1.1
 content-type: {{contentType}}
+Authorization: {{authToken}}
 
 {
   "name": "Bruno Sampaio",
@@ -20,6 +35,7 @@ content-type: {{contentType}}
 ###
 POST {{host}}/{{endPoint}} HTTP/1.1
 content-type: {{contentType}}
+Authorization: {{authToken}}
 
 {
   "name": "Rakely Sampaio",
@@ -32,14 +48,17 @@ content-type: {{contentType}}
 ###
 GET {{host}}/{{endPoint}} HTTP/1.1
 content-type: {{contentType}}
+Authorization: {{authToken}}
 
 ###
 GET {{host}}/{{endPoint}}/1 HTTP/1.1
 content-type: {{contentType}}
+Authorization: {{authToken}}
 
 ###
 PUT {{host}}/{{endPoint}}/1 HTTP/1.1
 content-type: {{contentType}}
+Authorization: {{authToken}}
 
 {
   "name": "Bruno Sampaio",
